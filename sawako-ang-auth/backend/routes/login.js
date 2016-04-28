@@ -6,11 +6,11 @@ module.exports = (router, User)=>{
     let method = authorizationArray[0];
     let base64ed = authorizationArray[1];
     let authArray = new Buffer(base64ed, 'base64').toString().split(':');
-    let name = authArray[0];
+    let username = authArray[0];
     let password = authArray[1];
-    console.log('name is : ' + name, 'password is : ' + password, 'method is : ' + method);
+    console.log('username is : ' + username, 'password is : ' + password, 'method is : ' + method);
 
-    User.findOne({name : name}, (err, user)=>{
+    User.findOne({username : username}, (err, user)=>{
       console.log('Here is user :' + user);
       let valid = user.compareHash(password);
       if(!valid){

@@ -1,0 +1,13 @@
+<form data-ng-submit="gems.createGems(gems.newGem)" novalidate="">
+  <label>Name:</label>
+    <p data-ng-bind="gems.newGem.name"></p>
+    <input name="name" data-ng-model="gems.newGem.name" type="text" required/><br>
+  <label>Color:</label>
+    <p data-ng-bind="gems.newGem.color"></p>
+    <input name="color" data-ng-model="gems.newGem.color" type="text" required/><br>
+  <label>Density (numbers only):</label>
+    <p data-ng-bind="gems.newGem.density"></p>
+    <input name="density" data-ng-model="gems.newGem.density" type="text" required/><br>
+  <!-- <div data-ng-mode="gems.newGem" data-ng-bind="gems.newGem"></div> -->
+  <button type="submit">Create New Gem!</button>
+</form>

@@ -1,0 +1,21 @@
+<form name="myForm" data-ng-submit="conts.getByIdContinents()" novalidate>
+  <label>*****Search by ID *****</label>
+  <p data-ng-hide="editing" data-ng-model="conts.getCont" data-ng-bind="conts.getCont._id"></p>
+  <label data-ng-show="conts.editing">id:</label>
+  <input name="id" data-ng-model="conts.id" type="text" required>
+  <label data-ng-show="conts.editing">country:</label>
+  <input name="country" data-ng-show="conts.editing" data-ng-model="conts.getCont.country" type="text" required>
+  <p data-ng-model="conts.getCont" data-ng-bind="conts.getCont.country"></p>
+  <label data-ng-show="conts.editing">region:</label>
+  <input name="region" data-ng-show="conts.editing" data-ng-model="conts.getCont.region" type="text" required>
+  <p data-ng-model="conts.getCont" data-ng-bind="conts.getCont.region"></p>
+  <label data-ng-show="conts.editing">mineral:</label>
+  <input name="mineral" data-ng-show="conts.editing" data-ng-model="conts.getCont.mineral" type="text" required>
+  <p data-ng-model="conts.getCont" data-ng-bind="conts.getCont.mineral"></p>
+  <label data-ng-model="conts.status" data-ng-bind="conts.status"></label>
+  <button data-ng-click="conts.buttonShow = true" data-ng-show="myForm.id.$valid" type="submit">Search Continent by Id</button>
+  <input data-ng-hide="!conts.editing" data-ng-click="conts.cancelEdits()" type="button" value="Cxl Edit">
+  <input data-ng-show="conts.buttonShow" data-ng-click="conts.editing = !conts.editing" type="button" value="EditCont">
+  <input data-ng-hide="!conts.editing" data-ng-click="conts.deleteContinentById()" type="button" value="Delete">
+  <input data-ng-hide="!conts.editing" type="submit" data-ng-click="conts.editContinents()" value="Save Edit">
+</form>

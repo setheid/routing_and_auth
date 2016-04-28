@@ -1,0 +1,12 @@
+<form data-ng-submit="conts.createContinents(conts.newConts)">
+  <label>Country:</label>
+    <p data-ng-bind="conts.newConts.country"></p>
+    <input data-ng-model="conts.newConts.country" type="text"/><br>
+  <label>Region:</label>
+    <p data-ng-bind="conts.newConts.region"></p>
+    <input data-ng-model="conts.newConts.region" type="text"/><br>
+  <label>Mineral:</label>
+    <p data-ng-bind="conts.newConts.mineral"></p>
+    <input data-ng-model="conts.newConts.mineral" type="text"/><br>
+  <button type="submit">Create New Continents!</button>
+</form>

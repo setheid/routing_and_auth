@@ -1,0 +1,22 @@
+<form name="myForm2" data-ng-submit="gems.getGemById()" novalidate>
+  <label>*****Search by ID *****</label>
+  <p data-ng-hide="editing" data-ng-model="gems.getGem" data-ng-bind="gems.getGem._id"></p>
+  <label data-ng-show="gems.editing">id:</label>
+  <input name="id2" data-ng-model="gems.id" type="text" required>
+  <label data-ng-show="gems.editing">name:</label>
+  <input name="gem-name" data-ng-show="gems.editing" data-ng-model="gems.getGem.name" type="text" required>
+  <p data-ng-model="gems.getGem" data-ng-bind="gems.getGem.name"></p>
+  <label data-ng-show="gems.editing">color:</label>
+  <input name="color" data-ng-show="gems.editing" data-ng-model="gems.getGem.color" type="text" required>
+  <p data-ng-model="gems.getGem" data-ng-bind="gems.getGem.color"></p>
+  <label data-ng-show="gems.editing">density:</label>
+  <input name="density" data-ng-show="gems.editing" data-ng-model="gems.getGem.density" type="text" required>
+  <p data-ng-model="gems.getGem" data-ng-bind="gems.getGem.density"></p>
+  <input name="mineral" data-ng-show="gems.editing" data-ng-model="gems.getGem.mineral" type="text" required>
+  <label data-ng-model="gems.status" data-ng-bind="gems.status"></label>
+  <button data-ng-click="gems.buttonShow = true" data-ng-show="myForm2.id2.$valid" type="submit">Search Gem by Id</button>
+  <input data-ng-hide="!gems.editing" data-ng-click="gems.cancelEdits()" type="button" value="Cxl Edit">
+  <input data-ng-show="gems.buttonShow" data-ng-click="gems.editing = !gems.editing" type="button" value="EditGem">
+  <input data-ng-hide="!gems.editing" data-ng-click="gems.deleteGemById()" type="button" value="Delete">
+  <input data-ng-hide="!gems.editing" type="submit" data-ng-click="gems.editGem()" value="Save Edit">
+</form>
