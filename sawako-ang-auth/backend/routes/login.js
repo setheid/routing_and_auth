@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = (router, User)=>{
-  router.post('/login', (req, res)=>{
+  router.get('/signin', (req, res)=>{
+    console.log(req.headers.authorization)
     let authorizationArray = req.headers.authorization.split(' ');
     let method = authorizationArray[0];
     let base64ed = authorizationArray[1];

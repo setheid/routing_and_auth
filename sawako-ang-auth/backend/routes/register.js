@@ -5,6 +5,7 @@ module.exports = (router, User)=>{
     let newUser = new User({username: req.body.username, password: req.body.password});
     newUser.save((err, data)=>{
       if(err){
+        console.log(err);
         return res.status(418).json({msg: 'I am a teapot. Not saved : ' + err});
       }
       var token = data.generateToken();

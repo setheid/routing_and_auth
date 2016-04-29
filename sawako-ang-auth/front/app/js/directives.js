@@ -1,19 +1,17 @@
 module.exports = function(app){
-  app.directive('createContinentForm', function(){
-    return {
-      restrict: 'E',
-      templateUrl: '/templates/form.html',
-      controller: 'ContinentCtrl',
-      controllerAs: 'conts'
-    };
-  });
 
   app.directive('editFormForContinents', function(){
     return {
       restrict: 'E',
       templateUrl: '/templates/edit-form.html',
-      controller: 'ContinentCtrl',
-      controllerAs: 'conts'
+      controller: 'ContinentCtrl'
+    };
+  });
+
+  app.directive('repeatConts', function(){
+    return {
+      restrict: 'E',
+      templateUrl: '/templates/repeat-conts.html'
     };
   });
 

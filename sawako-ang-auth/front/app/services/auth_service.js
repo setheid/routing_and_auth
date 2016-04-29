@@ -4,7 +4,7 @@ module.exports = function(app){
     var url = 'http://localhost:3000';
     var auth = {
       createUser(user, cb){
-        console.log('Here is user : ' + user);
+        console.log('Here is user : ' + JSON.stringify(user));
         cb || function(){};
         $http.post(url + '/register', user)
           .then((res)=>{
@@ -27,7 +27,7 @@ module.exports = function(app){
         cb || function(){};
         $http.get(url + '/signin', {
           headers: {
-            authorization: 'Basic' + btoa(user.email + ':' + user.password)
+            authorization: 'Basic ' + btoa(user.username + ':' + user.password)
           }
         }).then((res)=>{
           token = $window.localStorage.token = res.data.token;

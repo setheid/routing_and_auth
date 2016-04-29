@@ -5,13 +5,11 @@ let jwt = require('jsonwebtoken');
 let userSchema = mongoose.Schema({
   username: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   password: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   token:
   {

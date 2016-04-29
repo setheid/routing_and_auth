@@ -4,14 +4,14 @@ module.exports = (ContRouter, Continent, User, auth)=>{
 
   ContRouter.get('/continents', auth, (req, res)=>{
     Continent.find({}, (err, continent)=>{
-      res.json({id: continent});
+      res.json(continent);
     });
   });
 
   ContRouter.get('/continents/:id',auth, (req, res)=>{
     var query = {_id: req.params.id};
     Continent.findOne(query, (err, continent)=>{
-      res.json({id: continent});
+      res.json(continent);
     });
   });
 

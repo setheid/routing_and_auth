@@ -1,4 +1,4 @@
-<form data-ng-submit="gems.createGems(gems.newGem)" novalidate="">
+<form data-ng-submit="gems.createGems(gems.newGem)" novalidate ng-if="conts.signIn">
   <label>Name:</label>
     <p data-ng-bind="gems.newGem.name"></p>
     <input name="name" data-ng-model="gems.newGem.name" type="text" required/><br>

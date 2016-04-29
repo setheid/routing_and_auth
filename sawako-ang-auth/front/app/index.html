@@ -6,17 +6,11 @@
   </head>
   <body data-ng-app="myApp">
     <main data-ng-controller="ContinentCtrl as conts">
-      <form data-ng-submit="conts.createPerson(newUser)">
-        <input type="text" name="name" placeholder="username" data-ng-model="newUser.username">
-        <input type="password" name="name" placeholder="password" data-ng-model="newUser.password">
-        <button type="submit" name="button">Register!</button>
-      </form>
       <section ng-view>
       </section>
-        <create-continent-form></create-continent-form>
-        <edit-form-for-continents></edit-form-for-continents>
-        <create-gem-form></create-gem-form>
-        <edit-form-for-gems></edit-form-for-gems>
+        <register-form></register-form>
+        <login-form></login-form>
+      
     </main>
     <script src="./bundle.js" type="text/javascript"></script>
   </body>

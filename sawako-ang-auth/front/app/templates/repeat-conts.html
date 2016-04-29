@@ -1,0 +1,13 @@
+<form data-ng-submit="conts.getContinents()">
+  <div "conts.deleting === true" ? data-ng-repeat="contData in conts.allContinents" : data-ng-repeat="contData in conts.continentsList"><br>
+    <label class="conts-repeat">id:</label>
+    <p class="conts-repeat" data-ng-bind="contData._id"></p>
+    <label class="conts-repeat">Country:</label>
+    <p class="conts-repeat" data-ng-bind="contData.country"></p>
+    <label>Region:</label>
+    <p class="conts-repeat" data-ng-bind="contData.region"></p>
+    <label class="conts-repeat">Mineral:</label>
+    <p class="conts-repeat" data-ng-bind="contData.mineral"></p>
+  </div>
+  <button type="submit">Get All Continents Data</button>
+</form>

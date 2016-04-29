@@ -1,0 +1,12 @@
+<form data-ng-submit="conts.signingIn(user)">
+  Log In Field:
+  <input type="text" placeholder="username" data-ng-model="user.username">
+  <input type="password" placeholder="password" data-ng-model="user.password">
+  <button type="submit" name="button">Log In</button>
+  or please register if you don't have an account yet.
+</form><br>
+<form data-ng-submit="conts.createPerson(newUser)" data-ng-model="conts.register">
+  <input type="text" name="name" placeholder="username" data-ng-model="newUser.username">
+  <input type="password" name="name" placeholder="password" data-ng-model="newUser.password">
+  <button type="submit" name="button">Register!</button>
+</form>

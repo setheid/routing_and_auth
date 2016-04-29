@@ -18,9 +18,13 @@ app.config(['$routeProvider', function(routeProvider){
     })
     .when('/home', {
       controller: 'ContinentCtrl',
-      controllerAs: 'conts',
       templateUrl: './templates/form.html'
-    });
+    })
+    .when('/',{
+      controller: 'ContinentCtrl',
+      controllerAs: 'conts',
+      templateUrl: './templates/login-form.html'
+    })
 }]);
 
 app.controller('ContinentCtrl',['ResourceService','AuthService','$location', function(ResourceService, AuthService, $location){
@@ -40,6 +44,8 @@ app.controller('ContinentCtrl',['ResourceService','AuthService','$location', fun
   this.buttonShow = false;
   this.deleting = false;
   this.fetchedData = [];
+  this.signIn = false;
+  this.register = false;
 
   this.cancelEdits = function(){
     this.getCont = this.fetchedData;
@@ -55,7 +61,6 @@ app.controller('ContinentCtrl',['ResourceService','AuthService','$location', fun
   this.getContinents = function(){
     continentResource.getAll()
     .then((result)=>{
-      console.log('Here is result ' + result);
       this.continentsList = result.data;
       this.allContinents = angular.copy(result.data);
       console.log('Lets use them later : ' + this.allContinents);
@@ -112,15 +117,17 @@ app.controller('ContinentCtrl',['ResourceService','AuthService','$location', fun
   this.createPerson = function(user){
     AuthService.createUser(user, function(err, res){
       console.log('hitting');
+    });
+  };
+
+  this.signingIn = (user)=>{
+    this.signIn = true;
+    AuthService.signIn(user,function(err, res){
       $location.path('/home');
     });
   };
 
-  this.signUp = function(user){
-    AuthService.createUser(user,function(err, res){
-      $location.path('/home');
-    });
-  };
+
 }]);
 
 app.controller('gemsController',['ResourceService',function(ResourceService){

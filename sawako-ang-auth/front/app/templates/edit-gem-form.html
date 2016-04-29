@@ -1,4 +1,4 @@
-<form name="myForm2" data-ng-submit="gems.getGemById()" novalidate>
+<form name="myForm2" data-ng-submit="gems.getGemById()" ng-if="conts.signIn" novalidate>
   <label>*****Search by ID *****</label>
   <p data-ng-hide="editing" data-ng-model="gems.getGem" data-ng-bind="gems.getGem._id"></p>
   <label data-ng-show="gems.editing">id:</label>
