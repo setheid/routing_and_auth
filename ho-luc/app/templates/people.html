@@ -1,0 +1,29 @@
+<main>
+  <section ng-init="peoplectrl.getPeople()" ng-controller="PeopleController as peoplectrl">
+
+    <ul>
+      <li ng-repeat="person in peoplectrl.people">
+        <p id="person-name">The person's name is: {{person.name}}.</p>
+        <p id="person-favorite-food">{{person.name}}'s favorite food is: {{person.favoriteFood}}.</p>
+        <p id="person-age">{{person.name}} is {{person.age}} years old.</p>
+        <button ng-click="peoplectrl.removePerson(person)">Delete</button>
+        <button ng-click="peoplectrl.toggleForm(person)">Edit</button>
+        <form ng-if="person.editing" ng-submit="peoplectrl.updatePerson(person)">
+          <input type="text" placeholder="name" ng-model="person.name"/>
+          <input type="text" placeholder="favorite-food" ng-model="person.favoriteFood"/>
+          <input type="text" placeholder="age" ng-model="person.age"/>
+          <button type="submit">Save Changes</button>
+          <button ng-click="peoplectrl.toggleForm(person)">Back</button>
+        </form>
+      </li>
+    </ul>
+
+    <form ng-submit="peoplectrl.createPerson(peoplectrl.newPerson)">
+      <input type="text" placeholder="name" ng-model="peoplectrl.newPerson.name"/>
+      <input type="text" placeholder="favorite-food" ng-model="peoplectrl.newPerson.favoriteFood"/>
+      <input type="text" placeholder="age" ng-model="peoplectrl.newPerson.age"/>
+      <button type="submit">New Person</button>
+    </form>
+  </section>
+  <button ng-click="peoplectrl.signOut()">sign out</button>
+</main>

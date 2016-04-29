@@ -1,0 +1,29 @@
+<main>
+  <section ng-init="animalctrl.getAnimal()" ng-controller="AnimalController as animalctrl">
+
+    <ul>
+      <li ng-repeat="animal in animalctrl.animals">
+        <p>The animal name is: {{animal.name}}.</p>
+        <p>{{animal.name}}'s favorite food is: {{animal.favoriteFood}}.</p>
+        <p>{{animal.name}} is {{animal.age}} years old.</p>
+        <button ng-click="animalctrl.removeAnimal(animal)">Delete</button>
+        <button ng-click="animalctrl.toggleForm(animal)">Edit</button>
+        <form ng-if="animal.editing" ng-submit="animalctrl.updateAnimal(animal)">
+          <input type="text" placeholder="name" ng-model="animal.name"/>
+          <input type="text" placeholder="favorite-food" ng-model="animal.favoriteFood"/>
+          <input type="text" placeholder="age" ng-model="animal.age"/>
+          <button type="submit">Save Changes</button>
+          <button ng-click="animalctrl.toggleForm(animal)">Back</button>
+        </form>
+      </li>
+    </ul>
+
+    <form ng-submit="animalctrl.createAnimal(animalctrl.newAnimal)">
+      <input type="text" placeholder="name" ng-model="animalctrl.newAnimal.name"/>
+      <input type="text" placeholder="favorite-food" ng-model="animalctrl.newAnimal.favoriteFood"/>
+      <input type="text" placeholder="age" ng-model="animalctrl.newAnimal.age"/>
+      <button type="submit">New Animal</button>
+    </form>
+
+  </section>
+</main>
