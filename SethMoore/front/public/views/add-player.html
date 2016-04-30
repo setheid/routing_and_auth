@@ -1,0 +1,14 @@
+<section id="add-player">
+  <h1>Add Player</h1>
+  <ul>
+    <li>Name:<input data-ng-model="players.newPlayer.name"></li>
+    <li>Alias:<input data-ng-model="players.newPlayer.alias"></li>
+    <li>Position:<input data-ng-model="players.newPlayer.position"></li>
+    <li>Country:<input data-ng-model="players.newPlayer.country"></li>
+    <li>Current Team:<input data-ng-model="players.newPlayer.current_team"></li>
+    <li>
+      <button data-ng-click="players.addPlayer(players.newPlayer)">Add Player</button>
+    </li>
+  </ul>
+  <h3 data-ng-if="players.error">{{players.error}}</h3>
+</section>

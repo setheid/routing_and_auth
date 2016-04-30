@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html data-ng-app="app" data-ng-controller="appCtrl as app">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./main.css">
+
+    <title>Two Resource API</title>
+  </head>
+  <body data-ng-controller="teamsCtrl as teams">
+    <main data-ng-init="teams.getTeams(); players.getPlayers()" data-ng-controller="playersCtrl as players">
+
+      <div data-ng-view></div>
+
+    </main>
+
+  <!--- Scripts --->
+  <script src="./bundle.js"></script>
+  </body>
+</html>

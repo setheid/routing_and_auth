@@ -1,0 +1,14 @@
+<section id="team-list">
+  <h1>Teams</h1>
+  <article class="team" id="{{team.name}}" data-ng-repeat="team in teams.teams">
+    <h2 class="team-title" data-ng-init="team.title = team.name.replace('_',' ')">{{team.title}}</h2>
+    <button data-ng-show="!team.confirm" class="confirm-delete" data-ng-click="app.confirmDel(team)">Delete</button>
+    <button data-ng-if="team.confirm" class="delete-team" data-ng-click="teams.deleteTeam(team)">Confirm Delete</button>
+    <button data-ng-show="team.confirm" data-ng-click="app.confirmDel(team)">Cancel</button>
+    <div player-view id="{{player.alias}}" data-ng-repeat="player in players.players" data-ng-if="player.current_team === team.name"></div>
+  </article>
+  <article>
+    <h2 class="team-title">Free Agents</h2>
+    <div player-view id="{{player.alias}}" data-ng-repeat="player in players.players" data-ng-if="player.current_team === null"></div>
+  </article>
+</section>

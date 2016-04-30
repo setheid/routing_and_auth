@@ -1,0 +1,13 @@
+<h3 class="player">Position {{player.position}}: {{player.alias}}</h3><button class="edit-player" data-ng-show="!player.makeEdit" data-ng-click="app.edit(player)">Edit</button>
+<ul class="player-form" data-ng-show="player.makeEdit">
+  <li>Name: <span>{{player.name}}</span><input data-ng-model="player.edited.newName"></li>
+  <li>Alias: <span>{{player.alias}}</span><input data-ng-model="player.edited.newAlias"></li>
+  <li>Position: <span>{{player.position}}</span><input data-ng-model="player.edited.newPosition"></li>
+  <li>Country: <span>{{player.country}}</span><input data-ng-model="player.edited.newCountry"></li>
+  <li>Current Team: <span>{{player.current_team ? team.title : 'None'}}</span><input data-ng-model="player.edited.newTeam"></li>
+  <li>
+    <button class="update-player" data-ng-click="players.update(player)">Update</button>
+    <button class="delete-player" data-ng-click="players.deletePlayer(player)">Delete</button>
+    <button class="cancel" data-ng-click="app.cancel(player)">Cancel</button>
+  </li>
+</ul>

@@ -1,0 +1,64 @@
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.team-title {
+  display: inline-block;
+  margin: 20px 10px 10px 0;
+}
+
+.player {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+}
+
+.player-form {
+  width: 250px;
+  margin: 0 0 30px;
+}
+
+.player-form span {
+  color: gray;
+}
+
+.player-form input {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+#add-player ul {
+  width: 235px;
+  padding: 0;
+}
+
+#add-player input {
+  float: right;
+}
+
+#add-player li {
+  clear: both;
+  margin: 5px 0;
+}
+
+#add-team ul {
+  width: 250px;
+  margin: 0 0 30px;
+  padding: 0;
+}
+
+#add-team span {
+  color: gray;
+}
+
+#add-team input {
+  width: 80%;
+  margin-bottom: 10px;
+}
